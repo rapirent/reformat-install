@@ -9,7 +9,6 @@ git clone https://github.com/rapirent/vimrc.git
 cd vimrc
 ./install.sh
 cd $HOME
-rm -r vimrc
 vim << EOF
 :PlugUpgrade
 :PlugInstall
@@ -27,13 +26,13 @@ cd $HOME
 $music = "https://sourceforge.net/projects/deadbeef/files/debian/deadbeef-static_0.7.2-2_amd64.deb/download"
 wget $music -O 123.deb
 sudo dpkg -i 123.deb
-rm -r 123.deb
+sudo rm -r -f 123.deb
 
 #chrome
 $chrome = "https://www.google.com.tw/chrome/browser/thankyou.html?platform=linux"
 wget $chrome -O 123.deb
 sudo dpkg -i 123.deb
-rm -r 123.deb
+sudo rm -r -f 123.deb
 
 #zsh
 sudo apt install zsh
@@ -43,7 +42,7 @@ vim .zshrc << EOF
 :1,$s/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g
 :quit
 EOF
-chsh -s /bin/zsh
+sudo chsh -s /bin/zsh
 git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
