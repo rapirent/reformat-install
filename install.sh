@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt upgrade
+sudo apt update
 sudo apt install gcc g++ make -y
 sudo apt install vim
 sudo apt install -f
