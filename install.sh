@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt install gcc g++ make -y
+sudo apt install vim
 
 #vimrc
 cd $HOME/
