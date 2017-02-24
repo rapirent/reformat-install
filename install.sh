@@ -28,6 +28,7 @@ git clone https://github.com/rapirent/my_sublimetext.git
 cd my_sublimetext
 sudo sh ./install.sh
 cd $HOME
+sudo rm -r -f sublime-text_build-3126_amd64.deb
 
 #music
 wget https://sourceforge.net/projects/deadbeef/files/debian/deadbeef-static_0.7.2-2_amd64.deb/download -O 123.deb
@@ -38,6 +39,7 @@ sudo rm -r -f 123.deb
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O 123.deb
 sudo dpkg -i 123.deb
 sudo rm -r -f 123.deb
+sudo apt install -f
 
 #zsh
 sudo apt install zsh
@@ -45,6 +47,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 vim .zshrc << EOF
 :1,$s/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g
+:w!!
 :quit
 EOF
 sudo chsh -s /bin/zsh
@@ -52,5 +55,5 @@ git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
 cd ..
-rm -r fonts
+rm -r -f fonts
 gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono derivative Powerline 13'
