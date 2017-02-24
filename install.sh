@@ -1,14 +1,18 @@
 #!/bin/bash
 
+sudo apt upgrade
 sudo apt install gcc g++ make -y
 sudo apt install vim
+sudo apt install -f
+sudo apt install curl
+sudo apt install wget
+
 
 #vimrc
 cd $HOME/
-sudo apt install -y git
 git clone https://github.com/rapirent/vimrc.git
 cd vimrc
-./install.sh
+sudo sh ./install.sh
 cd $HOME
 vim << EOF
 :PlugUpgrade
@@ -18,20 +22,20 @@ vim << EOF
 EOF
 
 #sublime
+wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb
+sudo dpkg -i sublime-text_build*.deb
 git clone https://github.com/rapirent/my_sublimetext.git
 cd my_sublimetext
-./install.sh
+sudo sh ./install.sh
 cd $HOME
 
 #music
-$music = "https://sourceforge.net/projects/deadbeef/files/debian/deadbeef-static_0.7.2-2_amd64.deb/download"
-wget $music -O 123.deb
+wget https://sourceforge.net/projects/deadbeef/files/debian/deadbeef-static_0.7.2-2_amd64.deb/download -O 123.deb
 sudo dpkg -i 123.deb
 sudo rm -r -f 123.deb
 
 #chrome
-$chrome = "https://www.google.com.tw/chrome/browser/thankyou.html?platform=linux"
-wget $chrome -O 123.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O 123.deb
 sudo dpkg -i 123.deb
 sudo rm -r -f 123.deb
 
@@ -49,5 +53,4 @@ cd fonts
 ./install.sh
 cd ..
 rm -r fonts
-$font = 'Ubuntu Mono derivative Powerline 13'
-gsettings set org.gnome.desktop.interface monospace-font-name $font
+gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono derivative Powerline 13'
