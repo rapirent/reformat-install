@@ -50,7 +50,7 @@ vim .zshrc << EOF
 :w!!
 :quit
 EOF
-sudo chsh -s /bin/zsh
+chsh -s /bin/zsh
 git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
