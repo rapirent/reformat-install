@@ -21,15 +21,6 @@ vim << EOF
 :quit
 EOF
 
-#sublime
-wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb
-sudo dpkg -i sublime-text_build*.deb
-git clone https://github.com/rapirent/my_sublimetext.git
-cd my_sublimetext
-sudo sh ./install.sh
-cd $HOME
-sudo rm -r -f sublime-text_build-3126_amd64.deb
-
 #music
 wget https://sourceforge.net/projects/deadbeef/files/debian/deadbeef-static_0.7.2-2_amd64.deb/download -O 123.deb
 sudo dpkg -i 123.deb
